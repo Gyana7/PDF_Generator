@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ServeyForm</title>
+
+    <style>
+        * { box-sizing: border-box; font-family: 'Segoe UI'; }
+
+        body {
+            margin: 0;
+            background: linear-gradient(to right, #dfe9f3, #ffffff);
+        }
+
+        /* HEADER */
+        .header {
+            background: linear-gradient(to right, #004aad, #007bff);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* CARD */
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 30px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        /* SECTION */
+        .section-title {
+            font-size: 18px;
+            color: #004aad;
+            border-left: 5px solid #004aad;
+            padding-left: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* GRID */
+        .row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        /* INPUT */
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        input:focus {
+            border-color: #007bff;
+        }
+
+        /* BUTTON */
+        button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(to right, #28a745, #218838);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            transform: scale(1.03);
+        }
+
+        /* IMAGE PREVIEW BOX */
+        .preview-box {
+            border: 2px dashed #ccc;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .preview-img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            margin-top: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="header">GYANALIVE SERVEY FORM</div>
+
+<div class="container">
+
+    <form id="form">
+
+        <!-- PERSONAL -->
+        <div class="section-title">Personal Details</div>
+
+        <div class="row">
+            <div>
+                <label>Name *</label>
+                <input type="text" id="name" required>
+            </div>
+
+            <div>
+                <label>Email *</label>
+                <input type="email" id="email" required>
+            </div>
+
+            <div>
+                <label>Mobile *</label>
+                <input type="text" id="mobile" required>
+            </div>
+
+            <div>
+                <label>Gender</label>
+                <select id="gender">
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>TransGender</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Date of Birth</label>
+                <input type="date" id="dob">
+            </div>
+        </div>
+
+        <!-- ADDRESS -->
+        <div class="section-title">Address Details</div>
+
+        <div class="row"><div>
+            <label>State *</label>
+            <select id="state" required>
+                <option value="">Select State</option>
+                <option>Andhra Pradesh</option>
+                <option>Arunachal Pradesh</option>
+                <option>Assam</option>
+                <option>Bihar</option>
+                <option>Chhattisgarh</option>
+                <option>Goa</option>
+                <option>Gujarat</option>
+                <option>Haryana</option>
+                <option>Himachal Pradesh</option>
+                <option>Jharkhand</option>
+                <option>Karnataka</option>
+                <option>Kerala</option>
+                <option>Madhya Pradesh</option>
+                <option>Maharashtra</option>
+                <option>Manipur</option>
+                <option>Meghalaya</option>
+                <option>Mizoram</option>
+                <option>Nagaland</option>
+                <option>Odisha</option>
+                <option>Punjab</option>
+                <option>Rajasthan</option>
+                <option>Sikkim</option>
+                <option>Tamil Nadu</option>
+                <option>Telangana</option>
+                <option>Tripura</option>
+                <option>Uttar Pradesh</option>
+                <option>Uttarakhand</option>
+                <option>West Bengal</option>
+            </select>
+        </div>
+
+            <select id="district">
+                <option value="">Select District</option>
+            </select>
+
+            <div>
+                <label>Address</label>
+                <input type="text" id="address">
+            </div>
+        </div>
+
+        <!-- UPLOAD -->
+        <div class="section-title">Upload Documents</div>
+
+        <div class="row">
+
+            <!-- PHOTO -->
+            <div class="preview-box">
+                <label>Photo *</label>
+                <input type="file" id="photo">
+                <img id="photoPreview" class="preview-img">
+            </div>
+
+            <!-- SIGNATURE -->
+            <div class="preview-box">
+                <label>Signature *</label>
+                <input type="file" id="signature">
+                <img id="signPreview" class="preview-img">
+            </div>
+
+        </div>
+
+        <br>
+
+        <button type="submit">Generate & Download PDF</button>
+
+    </form>
+
+</div>
+
+<!--<script>-->
+
+<!--    // 👁️ PREVIEW-->
+<!--    photo.onchange = e => {-->
+<!--        const file = e.target.files[0];-->
+<!--        if(file) photoPreview.src = URL.createObjectURL(file);-->
+<!--    };-->
+
+<!--    signature.onchange = e => {-->
+<!--        const file = e.target.files[0];-->
+<!--        if(file) signPreview.src = URL.createObjectURL(file);-->
+<!--    };-->
+
+<!--    // 📤 SUBMIT-->
+<!--    document.getElementById("form").addEventListener("submit", async function(e) {-->
+<!--        e.preventDefault();-->
+
+<!--        if(!photo.files[0] || !signature.files[0]) {-->
+<!--            alert("Photo & Signature required!");-->
+<!--            return;-->
+<!--        }-->
+
+<!--        const toBase64 = file => new Promise(resolve => {-->
+<!--            const reader = new FileReader();-->
+<!--            reader.onload = () => resolve(reader.result.split(',')[1]);-->
+<!--            reader.readAsDataURL(file);-->
+<!--        });-->
+
+<!--        const data = {-->
+<!--            name: name.value,-->
+<!--            email: email.value,-->
+<!--            mobile: mobile.value,-->
+<!--            gender: gender.value,-->
+<!--            dob: dob.value,-->
+<!--            state: state.value,-->
+<!--            district: district.value,-->
+<!--            address: address.value,-->
+<!--            photo: await toBase64(photo.files[0]),-->
+<!--            signature: await toBase64(signature.files[0])-->
+<!--        };-->
+
+<!--        fetch("http://localhost:7878/api/pdf/generate", {-->
+<!--            method: "POST",-->
+<!--            headers: {"Content-Type":"application/json"},-->
+<!--            body: JSON.stringify(data)-->
+<!--        })-->
+<!--            .then(res => res.blob())-->
+<!--            .then(blob => {-->
+<!--                const url = URL.createObjectURL(blob);-->
+<!--                const a = document.createElement("a");-->
+<!--                a.href = url;-->
+<!--                a.download = "application.pdf";-->
+<!--                a.click();-->
+<!--            });-->
+<!--    });-->
+
+<!--</script>-->
+
+<script>
+
+    // PREVIEW
+    photo.onchange = e => photoPreview.src = URL.createObjectURL(e.target.files[0]);
+    signature.onchange = e => signPreview.src = URL.createObjectURL(e.target.files[0]);
+
+    let stateDistrictData = {};
+
+    // LOAD JSON FILE
+    fetch("india-data.json")
+        .then(res => res.json())
+        .then(data => stateDistrictData = data);
+
+    // STATE CHANGE
+    document.getElementById("state").addEventListener("change", function() {
+
+        const state = this.value;
+        const districtDropdown = document.getElementById("district");
+
+        districtDropdown.innerHTML = '<option value="">Select District</option>';
+
+        if (stateDistrictData[state]) {
+            stateDistrictData[state].forEach(d => {
+                const opt = document.createElement("option");
+                opt.value = d;
+                opt.textContent = d;
+                districtDropdown.appendChild(opt);
+            });
+        }
+    });
+
+    // SUBMIT
+    document.getElementById("form").addEventListener("submit", async function(e) {
+        e.preventDefault();
+
+        if(!photo.files[0] || !signature.files[0]) {
+            alert("Photo & Signature required!");
+            return;
+        }
+
+        const toBase64 = file => new Promise(resolve => {
+            const reader = new FileReader();
+            reader.onload = () => resolve(reader.result.split(',')[1]);
+            reader.readAsDataURL(file);
+        });
+
+        const data = {
+            name: name.value,
+            email: email.value,
+            mobile: mobile.value,
+            gender: gender.value,
+            dob: dob.value,
+            state: state.value,
+            district: district.value,
+            address: address.value,
+            photo: await toBase64(photo.files[0]),
+            signature: await toBase64(signature.files[0])
+        };
+
+        // fetch("http://localhost:7878/api/pdf/generate", {
+        //     method: "POST",
+        //     headers: {"Content-Type":"application/json"},
+        //     body: JSON.stringify(data)
+        // })
+        //     .then(res => res.blob())
+        //     .then(blob => {
+        //         const url = URL.createObjectURL(blob);
+        //         const a = document.createElement("a");
+        //         a.href = url;
+        //         a.download = "application.pdf";
+        //         a.click();
+        //     });
+
+        fetch("http://localhost:7878/api/pdf/generatepdf", {
+            method: "POST",
+            headers: {"Content-Type":"application/json"},
+            body: JSON.stringify(data)
+        })
+            .then(res => {
+                console.log("Status:", res.status);
+                console.log("Type:", res.headers.get("content-type"));
+                return res.blob();
+            })
+            .then(blob => {
+
+                console.log("Blob size:", blob.size);
+
+                if (blob.size === 0) {
+                    alert("PDF is empty!");
+                    return;
+                }
+
+                const url = URL.createObjectURL(blob);
+
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = "test.pdf";
+                a.click();
+            });
+    });
+
+</script>
+
+</body>
+</html>

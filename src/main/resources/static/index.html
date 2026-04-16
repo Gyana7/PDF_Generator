@@ -1,0 +1,232 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <title>Application Form</title>-->
+
+<!--    <style>-->
+<!--        * {-->
+<!--            box-sizing: border-box;-->
+<!--            font-family: 'Segoe UI', sans-serif;-->
+<!--        }-->
+
+<!--        body {-->
+<!--            margin: 0;-->
+<!--            background: linear-gradient(to right, #dfe9f3, #ffffff);-->
+<!--        }-->
+
+<!--        /* HEADER */-->
+<!--        .header {-->
+<!--            background: linear-gradient(to right, #004aad, #007bff);-->
+<!--            color: white;-->
+<!--            padding: 20px;-->
+<!--            text-align: center;-->
+<!--            font-size: 24px;-->
+<!--            font-weight: bold;-->
+<!--            letter-spacing: 1px;-->
+<!--        }-->
+
+<!--        /* MAIN CARD */-->
+<!--        .container {-->
+<!--            width: 90%;-->
+<!--            max-width: 1000px;-->
+<!--            margin: 30px auto;-->
+<!--            background: white;-->
+<!--            padding: 30px;-->
+<!--            border-radius: 12px;-->
+<!--            box-shadow: 0 10px 25px rgba(0,0,0,0.1);-->
+<!--        }-->
+
+<!--        /* SECTION TITLE */-->
+<!--        .section-title {-->
+<!--            font-size: 18px;-->
+<!--            margin-bottom: 15px;-->
+<!--            color: #004aad;-->
+<!--            border-left: 5px solid #004aad;-->
+<!--            padding-left: 10px;-->
+<!--        }-->
+
+<!--        /* GRID */-->
+<!--        .row {-->
+<!--            display: grid;-->
+<!--            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));-->
+<!--            gap: 20px;-->
+<!--        }-->
+
+<!--        /* INPUT */-->
+<!--        input, select {-->
+<!--            width: 100%;-->
+<!--            padding: 10px;-->
+<!--            border-radius: 6px;-->
+<!--            border: 1px solid #ccc;-->
+<!--            transition: 0.3s;-->
+<!--        }-->
+
+<!--        input:focus, select:focus {-->
+<!--            border-color: #007bff;-->
+<!--            box-shadow: 0 0 5px rgba(0,123,255,0.3);-->
+<!--            outline: none;-->
+<!--        }-->
+
+<!--        /* LABEL */-->
+<!--        label {-->
+<!--            font-size: 14px;-->
+<!--            margin-bottom: 5px;-->
+<!--            display: block;-->
+<!--        }-->
+
+<!--        /* BUTTON */-->
+<!--        button {-->
+<!--            width: 100%;-->
+<!--            padding: 14px;-->
+<!--            background: linear-gradient(to right, #28a745, #218838);-->
+<!--            color: white;-->
+<!--            border: none;-->
+<!--            font-size: 16px;-->
+<!--            border-radius: 6px;-->
+<!--            cursor: pointer;-->
+<!--            transition: 0.3s;-->
+<!--        }-->
+
+<!--        button:hover {-->
+<!--            transform: scale(1.02);-->
+<!--            box-shadow: 0 5px 15px rgba(0,0,0,0.2);-->
+<!--        }-->
+<!--    </style>-->
+
+<!--</head>-->
+
+<!--<body>-->
+
+<!--<div class="header">GYANALIVE APPLICATION FORM</div>-->
+
+<!--<div class="container">-->
+
+<!--    <form id="form">-->
+
+<!--        &lt;!&ndash; PERSONAL &ndash;&gt;-->
+<!--        <div class="section-title">Personal Details</div>-->
+
+<!--        <div class="row">-->
+<!--            <div>-->
+<!--                <label>Name</label>-->
+<!--                <input type="text" id="name" required>-->
+<!--            </div>-->
+
+<!--            <div>-->
+<!--                <label>Email</label>-->
+<!--                <input type="email" id="email" required>-->
+<!--            </div>-->
+
+<!--            <div>-->
+<!--                <label>Mobile</label>-->
+<!--                <input type="text" id="mobile" required>-->
+<!--            </div>-->
+
+<!--            <div>-->
+<!--                <label>Gender</label>-->
+<!--                <select id="gender">-->
+<!--                    <option>Male</option>-->
+<!--                    <option>Female</option>-->
+<!--                </select>-->
+<!--            </div>-->
+
+<!--            <div>-->
+<!--                <label>Date of Birth</label>-->
+<!--                <input type="date" id="dob">-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; ADDRESS &ndash;&gt;-->
+<!--        <div class="section-title">Address Details</div>-->
+
+<!--        <div class="row">-->
+<!--            <div>-->
+<!--                <label>State</label>-->
+<!--                <input type="text" id="state">-->
+<!--            </div>-->
+
+<!--            <div>-->
+<!--                <label>District</label>-->
+<!--                <input type="text" id="district">-->
+<!--            </div>-->
+
+<!--            <div>-->
+<!--                <label>Address</label>-->
+<!--                <input type="text" id="address">-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; UPLOAD &ndash;&gt;-->
+<!--        <div class="section-title">Upload Documents</div>-->
+
+<!--        <div class="row">-->
+<!--            <div>-->
+<!--                <label>Photo</label>-->
+<!--                <input type="file" id="photo">-->
+<!--            </div>-->
+
+<!--            <div>-->
+<!--                <label>Signature</label>-->
+<!--                <input type="file" id="signature">-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        <br>-->
+
+<!--        <button type="submit">Generate & Download PDF</button>-->
+
+<!--    </form>-->
+
+<!--</div>-->
+
+<!--<script>-->
+
+<!--    // Base64 conversion-->
+<!--    function toBase64(file) {-->
+<!--        return new Promise((resolve, reject) => {-->
+<!--            const reader = new FileReader();-->
+<!--            reader.readAsDataURL(file);-->
+<!--            reader.onload = () => resolve(reader.result.split(',')[1]);-->
+<!--            reader.onerror = error => reject(error);-->
+<!--        });-->
+<!--    }-->
+
+<!--    document.getElementById("form").addEventListener("submit", async function(e) {-->
+<!--        e.preventDefault();-->
+
+<!--        const photoFile = document.getElementById("photo").files[0];-->
+<!--        const signFile = document.getElementById("signature").files[0];-->
+
+<!--        const data = {-->
+<!--            name: name.value,-->
+<!--            email: email.value,-->
+<!--            mobile: mobile.value,-->
+<!--            gender: gender.value,-->
+<!--            dob: dob.value,-->
+<!--            state: state.value,-->
+<!--            district: district.value,-->
+<!--            address: address.value,-->
+<!--            photo: photoFile ? await toBase64(photoFile) : "",-->
+<!--            signature: signFile ? await toBase64(signFile) : ""-->
+<!--        };-->
+
+<!--        fetch("http://localhost:7878/pdf/generatepdf", {-->
+<!--            method: "POST",-->
+<!--            headers: {-->
+<!--                "Content-Type": "application/json"-->
+<!--            },-->
+<!--            body: JSON.stringify(data)-->
+<!--        })-->
+<!--            .then(res => res.blob())-->
+<!--            .then(blob => {-->
+<!--                const url = window.URL.createObjectURL(blob);-->
+<!--                const a = document.createElement("a");-->
+<!--                a.href = url;-->
+<!--                a.download = "application.pdf";-->
+<!--                a.click();-->
+<!--            });-->
+<!--    });-->
+<!--</script>-->
+
+<!--</body>-->
+<!--</html>-->

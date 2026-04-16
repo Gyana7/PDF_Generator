@@ -1,0 +1,71 @@
+{
+  "Odisha": ["Angul","Balangir","Balasore","Bargarh","Bhadrak","Boudh","Cuttack","Deogarh","Dhenkanal","Gajapati","Ganjam","Jagatsinghpur","Jajpur","Jharsuguda","Kalahandi","Kandhamal","Kendrapara","Keonjhar","Khordha","Koraput","Malkangiri","Mayurbhanj","Nabarangpur","Nayagarh","Nuapada","Puri","Rayagada","Sambalpur","Subarnapur","Sundargarh"],
+
+  "Bihar": ["Araria","Arwal","Aurangabad","Banka","Begusarai","Bhagalpur","Bhojpur","Buxar","Darbhanga","East Champaran","Gaya","Gopalganj","Jamui","Jehanabad","Kaimur","Katihar","Khagaria","Kishanganj","Lakhisarai","Madhepura","Madhubani","Munger","Muzaffarpur","Nalanda","Nawada","Patna","Purnia","Rohtas","Saharsa","Samastipur","Saran","Sheikhpura","Sheohar","Sitamarhi","Siwan","Supaul","Vaishali","West Champaran"],
+
+  "Maharashtra": ["Mumbai","Pune","Nagpur","Nashik","Aurangabad","Solapur","Thane","Kolhapur","Amravati","Latur"],
+
+  "Karnataka": ["Bangalore Urban","Mysore","Mangalore","Hubli","Belgaum","Shimoga","Tumkur","Bijapur"],
+
+  "Tamil Nadu": ["Chennai","Coimbatore","Madurai","Salem","Tiruchirappalli","Erode","Vellore","Thoothukudi"],
+
+  "Uttar Pradesh": ["Lucknow","Kanpur","Varanasi","Agra","Prayagraj","Meerut","Noida","Gorakhpur"],
+
+  "West Bengal": ["Kolkata","Howrah","Darjeeling","Siliguri","Hooghly","Murshidabad"],
+
+  "Delhi": ["New Delhi","North Delhi","South Delhi"],
+
+  "Gujarat": ["Ahmedabad","Surat","Vadodara","Rajkot"],
+
+  "Rajasthan": ["Jaipur","Udaipur","Jodhpur","Kota"],
+
+  "Punjab": ["Amritsar","Ludhiana","Patiala"],
+
+  "Haryana": ["Gurgaon","Faridabad","Panipat"],
+
+  "Kerala": ["Thiruvananthapuram","Kochi","Kozhikode"],
+
+  "Telangana": ["Hyderabad","Warangal"],
+
+  "Andhra Pradesh": ["Visakhapatnam","Vijayawada","Guntur"],
+
+  "Jharkhand": ["Ranchi","Jamshedpur"],
+
+  "Chhattisgarh": ["Raipur","Bilaspur"],
+
+  "Assam": ["Guwahati","Dibrugarh"],
+
+  "Goa": ["North Goa","South Goa"],
+
+  "Tripura": ["Agartala"],
+
+  "Manipur": ["Imphal"],
+
+  "Meghalaya": ["Shillong"],
+
+  "Nagaland": ["Kohima"],
+
+  "Mizoram": ["Aizawl"],
+
+  "Sikkim": ["Gangtok"],
+
+  "Uttarakhand": ["Dehradun"],
+
+  "Himachal Pradesh": ["Shimla"],
+
+  "Arunachal Pradesh": ["Itanagar"],
+
+  "Jammu and Kashmir": ["Srinagar","Jammu"],
+
+  "Ladakh": ["Leh"],
+
+  "Chandigarh": ["Chandigarh"],
+
+  "Puducherry": ["Puducherry"],
+
+  "Andaman and Nicobar Islands": ["Port Blair"],
+
+  "Lakshadweep": ["Kavaratti"],
+
+  "Dadra and Nagar Haveli and Daman and Diu": ["Daman"]
+}
